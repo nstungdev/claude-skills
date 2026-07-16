@@ -1,6 +1,6 @@
 {
   "name": "dev-toolkit",
-  "description": "Developer workflow toolkit — skills that support coding sessions (e.g. lean-context for maintaining CONTEXT.md)",
+  "description": "Developer workflow toolkit — lean-context, lean-spec, and lean-plan carry a feature from project context through a one-page spec to a technical blueprint, each layer built lean on the one before",
   "version": "1.0.0",
   "author": { "name": "tungnt", "email": "nstung.dev@gmail.com" },
   "repository": "https://github.com/nstungdev/claude-skills/skills/dev-toolkit",
