@@ -1,5 +1,5 @@
 ---
-name: context-keeper
+name: lean-context
 description: >
   Creates and maintains a CONTEXT.md file that captures the essential project context
   for vibe coding sessions — reducing guesswork and wasted tokens. Use this skill whenever:
@@ -10,7 +10,7 @@ description: >
   Always use this skill when project context setup or maintenance is involved, even if the user doesn't say "context" explicitly.
 ---
 
-# Context Keeper
+# Lean Context
 
 Maintain a `CONTEXT.md` file as the single source of truth for any coding project.
 
