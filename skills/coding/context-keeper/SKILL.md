@@ -56,6 +56,13 @@ Write concisely — each section should be 2–4 sentences max.
 
 Show the generated file to the user before saving. Ask if anything needs adjusting. Once confirmed, save to the project root as `CONTEXT.md`.
 
+### Step 4 — Link from CLAUDE.md
+
+`CONTEXT.md` is only useful if it actually gets read. Claude Code auto-loads `CLAUDE.md` at the start of every session, but it does **not** auto-load `CONTEXT.md` — so without a pointer, `CONTEXT.md` will sit unread.
+
+- If `CLAUDE.md` exists at the project root, check whether it already references `CONTEXT.md`. If not, add a one-line pointer near the top (e.g. `See CONTEXT.md for product domain, users, and current status.`). Do not copy `CONTEXT.md`'s content into `CLAUDE.md` — link to it, don't duplicate it.
+- If no `CLAUDE.md` exists, tell the user `CONTEXT.md` won't be read automatically without one, and ask whether to create a minimal `CLAUDE.md` with that pointer (or suggest the `init` skill for a fuller one).
+
 ---
 
 ## Mode: update
@@ -76,6 +83,7 @@ Suggest updating `CONTEXT.md` when:
 4. Append a row to the Change Log with the absolute date (`YYYY-MM-DD`, resolved from the current date — never a relative term like "today" or "last week") and a short description of what changed
 5. Trim the Change Log to the 10 most recent entries, dropping the oldest rows — this file should stay short
 6. Update `Last updated` at the top
+7. Verify `CLAUDE.md` still references `CONTEXT.md` (the pointer can get lost if `CLAUDE.md` is regenerated) — re-add the one-line pointer if it's missing
 
 Keep edits surgical. The file's value comes from being stable and trustworthy — not from being rewritten every session.
 
