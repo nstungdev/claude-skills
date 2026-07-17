@@ -11,11 +11,11 @@ description: >
 
 # Lean Plan
 
-Write a PLAN.md — a technical blueprint that answers **what** gets built at the component level, **how** components connect, and **which technical decisions are final** (plus what's explicitly off-limits). It does not answer why or who — that's already in `SPEC.md`. Link to it, don't repeat it.
+Write a PLAN.md that a reviewer can approve or reject in 30–60 seconds, answering four questions: **what** gets built, **how** (briefly), **what it affects**, and **what it explicitly won't do**. It does not answer why or who — that's already in `SPEC.md`. Link to it, don't repeat it.
 
-**Written for two readers at once:**
-- **The coder** reviews it to see what Claude intends to build before any code is written — it's a checkpoint, not a formality.
-- **Claude** (this session or a later one) uses the Components table as the input for breaking the work into concrete tasks. Each row must stand on its own well enough to become a task later — vague rows make that step harder, not easier.
+**Written for a reviewing supervisor, not a line-by-line coder.** The user delegates implementation to Claude and reviews checkpoints rather than reading code directly — so even though `PLAN.md` is more technical than `SPEC.md`, it must stay a fast approve/reject read. Full technical breakdown (step-by-step approach, data flow, rationale per decision) does NOT belong here — that level of detail is for `lean-task` once implementation actually starts. `PLAN.md`'s "How" section is a 2–4 line summary of approach, not the full breakdown.
+
+The Components table doubles as input for later task breakdown — each row must stand on its own well enough to become a task later, but the plan itself stays short.
 
 ---
 
@@ -37,10 +37,12 @@ Read the feature's `SPEC.md` — it already carries the domain and user context;
 
 Extract what's already available from the conversation:
 - Components or modules already mentioned
-- Tech choices or constraints already stated
+- The high-level approach, if already discussed
+- Existing systems/features/data likely to be touched
 - Anything already ruled out or marked as technically out of scope
+- Hard constraints already stated
 
-Only ask about what is **genuinely missing**: the component breakdown, the key tech decisions, and any hard constraints. Ask everything in a single message.
+Only ask about what is **genuinely missing**: the component breakdown, the approach, impact, and any hard constraints. Ask everything in a single message.
 
 If a decision isn't final yet, don't write it down as one — send it back to `SPEC.md`'s Open Questions instead.
 
@@ -49,11 +51,12 @@ If a decision isn't final yet, don't write it down as one — send it back to `S
 Read `references/plan-template.md` and fill it in, using the same `{feature-name}` slug as the feature's `SPEC.md`.
 
 Rules:
-- One page max, no prose — tables and short bullets only
-- Components: one row per unit of work, with the action (create / modify / delete) and any key constraint
-- Data Flow: explicit enough that dependencies between components are obvious
-- Tech Decisions: final choices only, one-line rationale — never list options that weren't picked
-- Constraints and Out of Scope: hard rules and technical exclusions, not soft preferences
+- One page max, tables and short bullets only — the four review sections must read in under a minute
+- **What** (Components): one row per unit of work, with the action (create / modify / delete) and any key detail
+- **How**: 2–4 lines, plain language, high-level approach only — no options, no per-decision rationale, no step-by-step. If it's growing past 4 lines, that detail belongs in `lean-task`, not here
+- **Impact**: existing systems, files, features, or data this touches — this is what lets a reviewer judge blast radius without reading code
+- **Won't Do**: explicit technical exclusions, not soft preferences
+- **Constraints**: hard rules only
 
 ### Step 3 — Confirm and save
 
@@ -68,7 +71,8 @@ Show the full generated PLAN.md to the user. Ask if anything needs adjusting. On
 ### When to update
 
 - A component gets added, split, or removed
-- A tech decision gets reversed
+- The approach changes
+- The blast radius (impact) turns out to be different than planned
 - A new hard constraint is discovered mid-build
 
 ### How to update
@@ -87,6 +91,8 @@ If nothing about the technical design has actually changed, don't edit — progr
 
 - **A blueprint, not a tracker** — `PLAN.md` records what was decided, not what's done; don't add status columns or checkboxes
 - **Built on the spec, not a copy of it** — link to `SPEC.md`, don't restate its problem, users, or scope
+- **Written for the reviewer's 60 seconds, not the implementer's hour** — the four review sections (What / How / Impact / Won't Do) are the whole point; anything that only serves implementation detail belongs in `lean-task`
+- **"How" is a summary, not a spec** — if it needs step-by-step or per-decision rationale to make sense, that's too much detail for this file
 - **Decisions are final when written** — an unresolved choice belongs in `SPEC.md`'s Open Questions, not here
 - **Components are future task units** — write each row specific enough that it could be handed off as a task as-is, not vague enough to need re-interpreting later
-- **Frozen once tasks start** — edit only when the design itself changes, never to reflect progress
+- **Frozen once tasks start** — edit only when the plan itself changes, never to reflect progress

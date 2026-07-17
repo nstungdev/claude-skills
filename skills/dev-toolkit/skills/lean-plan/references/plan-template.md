@@ -1,48 +1,45 @@
 # PLAN.md — {Feature Name}
 
-<!-- Blueprint for coder review and AI task generation.
-     One page max. No prose. No duplication from SPEC.md.
-     Frozen once tasks start — edit only if the technical design itself changes.
+<!-- Review-first: the first 4 sections must be readable in 30-60s by someone approving, not implementing.
+     Full technical breakdown (data flow, tech-decision rationale, step-by-step) is NOT here —
+     it belongs in lean-task once that work starts.
+     Frozen once tasks start — edit only if the plan itself changes.
      Last updated: {DATE, e.g. 2026-07-16} -->
 
-## Components
+## What
 
-{Everything that needs to be created or modified. Each row = one unit of work.}
+{Everything that gets created or modified. Each row = one unit of work.}
 
-| Component | Action | Notes |
-|-----------|--------|-------|
-| {name}    | create / modify / delete | {key constraint or detail} |
+| Component | Action | Note |
+|-----------|--------|------|
+| {name}    | create / modify / delete | {key detail} |
 
-## Data Flow
+## How
 
-{How data moves between components. Explicit enough that task dependencies are obvious.}
+{2–4 lines, plain language. The high-level approach only — no options, no step-by-step, no rationale for each choice. Full breakdown happens in lean-task.}
 
-{input} → {component A} → {component B} → {output}
+## Impact
 
-## Tech Decisions
+{What existing systems, files, features, or data this touches. This is what a reviewer needs to judge blast radius.}
 
-{Final choices only — no options listed. One line rationale each.}
+- {existing thing affected}
 
-| Decision | Choice | Why |
-|----------|--------|-----|
-| {decision} | {choice} | {why} |
+## Won't Do
 
-## Constraints
-
-{Hard rules AI must not violate during implementation.}
-
-- {constraint}
-
-## Out of Scope (Technical)
-
-{Technical things explicitly excluded from this iteration.}
+{Explicit technical exclusions for this iteration.}
 
 - {excluded item}
 
+## Constraints
+
+{Hard rules that must not be violated during implementation.}
+
+- {constraint}
+
 ## Revision Log
 
-{Only logged when the blueprint itself changes after being frozen — not a progress tracker.}
+{Only logged when the plan itself changes after being frozen — not a progress tracker.}
 
 | Date   | Change              |
 |--------|---------------------|
-| {DATE} | Blueprint created   |
+| {DATE} | Plan created        |
