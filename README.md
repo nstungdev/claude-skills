@@ -8,14 +8,16 @@ This repo is a Claude Code plugin marketplace. To use a plugin (e.g. `dev-toolki
 ```bash
 # From a local clone (no push needed):
 claude plugin marketplace add /path/to/claude-skills
-/plugin install dev-toolkit@claude-skills
+/plugin install dev-toolkit@tungnt
 
 # Or from GitHub, once pushed:
 claude plugin marketplace add nstungdev/claude-skills
-/plugin install dev-toolkit@claude-skills
+/plugin install dev-toolkit@tungnt
 ```
 
 Add `--scope user` to `marketplace add` to make it available in every project automatically, rather than just the current one.
+
+Note: the marketplace name `tungnt` must not already be registered from a different source (e.g. `claude-skill-angular-upgrade`) — remove that registration first with `/plugin marketplace remove tungnt`, or add this one under a different local alias.
 
 After updating a skill in this repo, run `/plugin marketplace update` in any session to pick up the changes.
 
