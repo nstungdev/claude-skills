@@ -1,0 +1,13 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "tungnt"
+  },
+  "plugins": [
+    {
+      "name": "dev-toolkit",
+      "source": "./skills/dev-toolkit",
+      "description": "Lean context/spec/plan/task/implement chain for carrying a feature from project context to working code"
+    }
+  ]
+}
