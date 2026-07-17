@@ -1,6 +1,6 @@
 {
   "name": "dev-toolkit",
-  "description": "Developer workflow toolkit — lean-context, lean-spec, lean-plan, and lean-task carry a feature from project context through a one-page spec, a technical blueprint, and into a trackable task breakdown, each layer built lean on the one before",
+  "description": "Developer workflow toolkit — lean-context, lean-spec, lean-plan, lean-task, and lean-implement carry a feature from project context through a one-page spec, a technical blueprint, a trackable task breakdown, and into working, build-clean code, each layer built lean on the one before",
   "version": "1.0.0",
   "author": { "name": "tungnt", "email": "nstung.dev@gmail.com" },
   "repository": "https://github.com/nstungdev/claude-skills/skills/dev-toolkit",
