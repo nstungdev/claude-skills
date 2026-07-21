@@ -9,7 +9,7 @@
 Run the following command in your regular terminal (**not** inside the Claude terminal):
 
 ```shell
-claude mcp add <name> --scope project -- docker run -i --rm -e DATABASE_URI crystaldba/postgres-mcp --access-mode=unrestricted
+claude mcp add <name> --scope project -- docker run -i --rm -e DATABASE_URI=postgresql://<user>:<password>@localhost:5432/<database> crystaldba/postgres-mcp --access-mode=unrestricted
 ```
 
 Replace `<name>` with an identifier for the server (e.g. `postgres`).
